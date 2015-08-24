@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+	<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="com.qdgs.bean">
+	<class	name="UserInfo"	table="UserInfo">
+	    <!-- 使用只读缓存 -->
+		<cache usage="read-write"/>
+		<!-- 映射标识属性 -->
+		<id	name="userId" type="integer" column="userId">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="id" column="id"
+			type="integer" not-null="true" unique="false" length="2"/>
+		<property name="userName" column="userName"
+			type="string" not-null="true" unique="true" length="20"/>
+		<property name="userPwd" column="userPwd"
+			type="string" not-null="true" length="40"/>
+		<property name="name" column="name"
+			type="string" not-null="true" length="50"/>
+		<property name="userSex" column="userSex"
+			type="string" not-null="false" length="6"/>
+		<property name="userLinkMan" column="userLinkMan"
+			type="string" not-null="false" length="50"/>
+		<property name="userEmail" column="userEmail"
+			type="string" not-null="true"  unique="true" length="50"/>
+		<property name="userTel" column="userTel"
+			type="string" not-null="true" unique="true" length="11"/>
+		<property name="userUnit" column="userUnit"
+			type="string" not-null="true" length="50"/>
+		<property name="userUrl" column="userUrl"
+			type="string" not-null="false" length="50"/>
+		<property name="userCountry" column="userCountry"
+			type="string" not-null="false" length="50"/>
+		<property name="userProvince" column="userProvince"
+			type="string" not-null="false" length="50"/>
+		<property name="userCity" column="userCity"
+			type="string" not-null="false" length="50"/>
+		<property name="userPost" column="userPost"
+			type="string" not-null="false" length="50"/>
+		<property name="userAddress" column="userAddress"
+			type="string" not-null="false" length="50"/>
+		<property name="userProduct" column="userProduct"
+			type="string" not-null="false" length="50"/>
+		<property name="userProductType" column="userProductType"
+			type="string" not-null="false" length="50"/>
+		<property name="userProductId" column="userProductId"
+			type="string" not-null="false" length="50"/>
+		<property name="head" column="head"
+		    type="string" not-null="true" length="50"/>
+		<property name="regTime" column="regTime" 
+		    type="string" not-null="true" length="255"/>
+		<property name="state" column="state" 
+		    type="string" not-null="true" length="3"/>
+		<set name="topic" inverse="true" cascade="all" lazy="false">
+		     <!-- colum用于指定外键列名 -->
+		     <key column="userId" not-null="true"/>
+		     <!-- 映射关联类 -->
+		     <one-to-many class="Topic"/>
+		 </set>
+		 <set name="reply" inverse="true" cascade="all" lazy="false">
+		     <!-- colum用于指定外键列名 -->
+		     <key column="userId" not-null="true"/>
+		     <!-- 映射关联类 -->
+		     <one-to-many class="Reply"/>
+		 </set>
+	 </class>
+</hibernate-mapping>

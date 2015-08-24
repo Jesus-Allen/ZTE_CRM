@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/PAGE/Footer.jsp=UTF-8
+encoding//WebContent/WEB-INF/PAGE/Knowledge.jsp=UTF-8
+encoding//WebContent/WEB-INF/PAGE/QuestionContent.jsp=UTF-8
+encoding//WebContent/WEB-INF/PAGE/Regist.jsp=UTF-8
+encoding//WebContent/WEB-INF/PAGE/User/add.jsp=UTF-8
+encoding//WebContent/admin/delete.jsp=UTF-8
+encoding//WebContent/admin/doLogin.jsp=UTF-8
+encoding//WebContent/admin/doPost.jsp=UTF-8
+encoding//WebContent/admin/doReg.jsp=UTF-8
+encoding//WebContent/admin/doReply.jsp=UTF-8
+encoding//WebContent/admin/doUpdate.jsp=UTF-8
+encoding//WebContent/admin/message.jsp=UTF-8
+encoding//WebContent/js/ToValidate.js=UTF-8
+encoding//src/com/qdgs/controllergqy/RegistAction.java=UTF-8
+encoding//src/com/qdgs/global/SendMail.java=UTF-8

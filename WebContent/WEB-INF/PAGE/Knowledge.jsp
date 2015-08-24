@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<jsp:include page="NaveBar.jsp"/>    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>知识库</title>
+</head>
+<body>
+<div class="entry" style="margin-top:10px">
+   <div class="panel panel-success">
+	   <div class="panel-heading">
+		  <h3 class="panel-title">知识库</h3>
+	   </div>
+	   <div class="panel-body">
+	       <font color="red">您可以向公司联系人发送邮件申请访问知识库</font>
+		   <div class="row">
+				<span class="col-md-9 col-sm-9 col-xs-9 col-md-offset-3"><img src="images/zxjs.jpg" class="img-rounded img-responsive"></span>
+		   </div>
+		   <div class="row">
+		     <div class="col-md-offset-5 col-sm-offset-3"><font face="黑体" color="orange"><b>客户支持中心系统平台结构图</b></font></div>
+		   </div>
+		   <div>
+		  &nbsp;&nbsp;&nbsp;&nbsp;   目前客户技术问题解决最直接的知识平台就是知识库，知识库必将是中兴通讯产品维护不可或缺的知识平台，主要包括三个分库：
+<br/>
+         &nbsp;&nbsp;&nbsp;&nbsp;   <font color="blue">标准解决库：</font>标准解决库主要用于一些常规技术问题的解答，由各种专题的标准解决方案组成，可以指导常见技术问题的解答！其主要资料来源为：各产品的操作维护手册，各种常见问题的标准解决方案，各种版本的固有问题的标准解决方案。<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;   <font color="blue">解决经验库：</font>经验技巧库主要用于一些疑难问题的解答，由维护人员在现场解决疑难问题的各种经验技巧组成，当用户技术问题在标准解决库中无法找到答案时，可进一步查询经验技巧库！其主要资料来源为：各种产品的维护经验，各种有借鉴价值的CALL LOG单！<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;   <font color="blue">技术手册库：</font>技术手册库主要用于产品普及知识的解答，由各种产品的技术手册组成，当客户询问产品的性能指标，结构功能等问题时可调用该库进行解答！<br>
+		   </div>
+	   </div>
+   </div>
+</div>
+</body>
+</html>
+<jsp:include page="Footer.jsp"/>

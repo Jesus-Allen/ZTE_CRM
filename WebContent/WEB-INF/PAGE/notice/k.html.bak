@@ -1,0 +1,10 @@
+<div class="entry" style="margin-top:10px">
+   <div class="panel panel-success">
+	   <div class="panel-heading">
+		  <h3 class="panel-title">服务承诺</h3>
+	   </div>
+	   <div class="panel-body">
+				<span class="col-md-9 col-sm-9 col-xs-9 col-md-offset-2"><img src="../images/fwcn.jpg" class="img-thumbnail img-responsive"></span>
+	   </div>
+   </div>
+</div>

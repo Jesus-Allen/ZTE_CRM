@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 配置DAO组件的模板 -->
+	<bean id="daoTemplate" abstract="true" lazy-init="true"
+		p:sessionFactory-ref="sessionFactory"/>
+
+	<bean id="loginTestDao"
+		class="com.qdgs.daoimpl.LoginTestDaoImpl"
+		parent="daoTemplate"/>
+	<bean id="userInfoDao"
+	    class="com.qdgs.daoimpl.UserInfoDaoImpl"
+	    parent="daoTemplate"/>
+	<bean id="questionDao"
+	    class="com.qdgs.daoimpl.QuestionDaoImpl"
+	     parent="daoTemplate"/>
+
+	<bean id="lifePeriodDao"
+	    class="com.qdgs.daoimpl.LifePeriodDaoImpl"
+	     parent="daoTemplate"/>
+	
+	<bean id="versionPublishDao"
+	    class="com.qdgs.daoimpl.VersionPublishDaoImpl"
+	     parent="daoTemplate"/>
+	<bean id="docDao"
+	    class="com.qdgs.daoimpl.DocDaoImpl"
+	     parent="daoTemplate"/>
+	<bean id="doubleServiceRequestDao"
+	    class="com.qdgs.daoimpl.DoubleServiceRequestDaoImpl"
+	     parent="daoTemplate"/>
+	<bean id="serviceRequestDao"
+	    class="com.qdgs.daoimpl.ServiceRequestDaoImpl"
+	     parent="daoTemplate"/>
+	
+	
+</beans>

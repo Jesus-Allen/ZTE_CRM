@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- Struts2配置文件的根元素 -->
+<struts>
+	<!-- 配置了系列常量 -->
+	<constant name="struts.custom.i18n.resources" value="mResource"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.objectFactory" value="spring"/>
+	<constant name="struts.action.extension" value="html"/>
+	<package name="default" namespace="/" extends="struts-default" >
+	    
+	    
+	    <interceptors>
+            <!-- 定义权限控制拦截器 -->
+            <interceptor name="authority" class="com.qdgs.action.interceptor.AuthorizationInterceptor" />
+            <interceptor name="admin" class="com.qdgs.action.interceptor.AdminInterceptor"/>
+        </interceptors>
+        
+	    
+   
+         
+		<global-results>
+		    <result name="adminlogin">/WEB-INF/PAGE/Login.jsp</result>
+		    <result name="login">/WEB-INF/PAGE/Exception/NoInvit.jsp</result>
+		    <result name="exception">/WEB-INF/PAGE/Exception/Exception.jsp</result>
+		   
+		</global-results>
+	    
+	    <!--  定义全局异常-->
+<!--  
+	    <global-exception-mappings>
+	         
+	         <exception-mapping exception="java.lang.Exception" result="exception"></exception-mapping>
+	         
+	    </global-exception-mappings>
+-->
+       <action name="lan" class="com.qdgs.controllergqy.lanAction" >
+            <result name="success">/WEB-INF/PAGE/Index.jsp</result>
+            <!-- 使用拦截器 -->
+           <!--  <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>--> 
+        </action>
+ 		
+	    <!-- 使用拦截器的页面跳转 -->
+	    <action name="test" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/Login.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	   </action>
+	   <action name="service" class="com.qdgs.controllergqy.DoubleServiceRequestAction" method="show">
+	       <result name="success">/WEB-INF/PAGE/Service.jsp</result>
+	       <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	   </action>
+	   <action name="luntanindex" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/index.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	      
+	      <action name="luntandetail" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/detail.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	      <action name="luntanquerylist" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/querylist.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	      
+	      <action name="luntanlist" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/list.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	   
+	      
+	      <action name="luntannewfile" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/NewFile.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	      
+	       <action name="luntanpost" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/post.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	      
+	       <action name="luntanreply" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/reply.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	      
+	       <action name="luntanupdate" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/LUNTAN/update.jsp</result>
+	        <!-- 使用拦截器 -->
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="authority"/>
+	      </action>
+	      
+	      <action name="space" class="com.qdgs.controllergqy.SpaceAction" method="show">
+	          <result name="success">/WEB-INF/PAGE/Space.jsp</result>
+	           <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+	      </action>
+	       <action name="spacechange" class="com.qdgs.controllergqy.SpaceAction" method="change">
+	          <result name="success">/WEB-INF/PAGE/SpaceChange.jsp</result>
+	           <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+	      </action>
+	     
+	       <action name="notice" class="com.qdgs.controllergqy.GoToTestAction">
+	          <result name="success">/WEB-INF/PAGE/Notice.jsp</result>
+	           <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+	      </action>
+	      <action name="doc" class="com.qdgs.controllergqy.admin.DocAction" method="showfront">
+	         <result name="success">/WEB-INF/PAGE/Doc.jsp</result>
+	           <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+	      </action>
+	       <action name="knowledge" class="com.qdgs.controllergqy.GoToTestAction">
+	         <result name="success">/WEB-INF/PAGE/Knowledge.jsp</result>
+	           <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+	      </action>
+	      
+	   
+	    
+	    <!-- 不使用拦截器的页面跳转 -->
+	     <action name="forgetPass" class="com.qdgs.controllergqy.GoToTestAction">
+	         <result name="success">/WEB-INF/PAGE/ForgetPassWord.jsp</result>
+	    </action>
+	    <action name="index" class="com.qdgs.controllergqy.GoToTestAction">
+	         <result name="success">/WEB-INF/PAGE/Index.jsp</result>
+	    </action>
+	    <action name="login" class="com.qdgs.controllergqy.GoToTestAction">
+	        <result name="success">/WEB-INF/PAGE/Login.jsp</result>
+	     </action>
+	     <action name="regist" class="com.qdgs.controllergqy.GoToTestAction">
+	         <result name="success">/WEB-INF/PAGE/Regist.jsp</result>
+	     </action>
+	     <action name="noinvist" class="com.qdgs.controllergqy.GoToTestAction">
+	         <result name="success">/WEB-INF/PAGE/Exception/NoInvit.jsp</result>
+	      </action>
+	      <action name="treaty" class="com.qdgs.controllergqy.GoToTestAction">
+	         <result name="success">/WEB-INF/PAGE/Law.jsp</result>
+	      </action>
+	      <action name="help" class="com.qdgs.controllergqy.GoToHelpAction">
+	         <result name="success">/WEB-INF/PAGE/Help.jsp</result>
+	      </action>
+	      
+	      <action name="questioncontent" class="com.qdgs.controllergqy.GoToQuestionContentAction">
+	         <result name="success">/WEB-INF/PAGE/QuestionContent.jsp</result>
+	      </action>
+	        <action name="index-a1" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/a1.jsp</result>
+		</action>
+		<action name="index-a2" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/a2.jsp</result>
+		</action>
+		<action name="index-a3" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/a3.jsp</result>
+		</action>
+		<action name="index-a4" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/a4.jsp</result>
+		</action>
+		<action name="index-a5" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/a5.jsp</result>
+		</action>
+		<action name="index-b1" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/b1.jsp</result>
+		</action>
+		<action name="index-b2" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/b2.jsp</result>
+		</action>
+		<action name="index-b3" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/b3.jsp</result>
+		</action>
+		<action name="index-b4" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/b4.jsp</result>
+		</action>
+		<action name="index-b5" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/b5.jsp</result>
+		</action>
+		<action name="index-c1" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/c1.jsp</result>
+	       <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+		</action>
+		<action name="index-c2" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/c2.jsp</result>
+	       <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+		</action>
+		<action name="index-c3" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/c3.jsp</result>
+	       <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+		</action>
+		<action name="index-c4" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/c4.jsp</result>
+	       <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+		</action>
+		<action name="index-c5" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/c5.jsp</result>
+	       <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+	    </action>
+	    <action name="index-d1" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/d1.jsp</result>
+	       <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="authority"/>
+		</action>
+	         
+	     <!-- 处理action -->
+	    <action name="updateaction" class="com.qdgs.controllergqy.RegistAction" method="update">
+	        <result name="success">/WEB-INF/PAGE/ToSpace.jsp</result>
+	        <result name="error">/WEB-INF/PAGE/Exception/ErrorTest.jsp</result>
+	        
+	    </action>
+	    <action name="registaction" class="com.qdgs.controllergqy.RegistAction">
+	        <result name="success">/WEB-INF/PAGE/SuccessTest.jsp</result>
+	        <result name="error">/WEB-INF/PAGE/Exception/ErrorTest.jsp</result>
+	        
+	    </action>
+	     <action name="adminloginaction" class="com.qdgs.controllergqy.AdminLoginAction">
+	      
+	        <result name="error" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	            
+	    </action>
+	    <action name="loginaction" class="com.qdgs.controllergqy.LoginAction">
+	         <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	    </action>
+	    <action name="loginoutaction" class="com.qdgs.controllergqy.LoginoutAction">
+	        <result name="success" type="redirect">index.html</result>
+	        <result name="error">/WEB-INF/PAGE/Exception/ErrorTest.jsp</result>
+	    </action>
+	    <action name="forgetPassAction" class="com.qdgs.controllergqy.UserInfoAction" method="findpass">
+	         <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	    </action>
+	     <action name="sendEmailAction" class="com.qdgs.controllergqy.UserInfoAction" method="sendemail">
+	         <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	    </action>
+	   
+	    
+	   
+	    <!-- 根据id删除userInfo -->
+	    <action name="deleteUserInfoByUserId" class="com.qdgs.controllergqy.SolveUserInfoByUserIdAction"  method="delete">
+	      <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	    </action>
+	    <!-- deleteDocByDocId 根据id删除doc -->
+	     <action name="deleteDocByDocId" class="com.qdgs.controllergqy.admin.DocAction"  method="delete">
+	      <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	    </action>
+	    <!-- 判断字段是否存在 -->
+	    <action name="checkusernameaction" class="com.qdgs.controllergqy.CheckUserNameAction"  method="doAction">
+	    </action>
+	    <action name="checkuseremailaction" class="com.qdgs.controllergqy.CheckUserEmailAction"  method="doAction">
+	    </action>
+	    <action name="checkusertelaction" class="com.qdgs.controllergqy.CheckUserTelAction"  method="doAction">
+	    </action>
+	     <action name="checkusernamenoselfaction" class="com.qdgs.controllergqy.CheckUserNameAction"  method="doActionNoSelf">
+	    </action>
+	    <action name="checkuseremailnoselfaction" class="com.qdgs.controllergqy.CheckUserEmailAction"  method="doActionNoSelf">
+	    </action>
+	    <action name="checkusertelnoselfaction" class="com.qdgs.controllergqy.CheckUserTelAction"  method="doActionNoSelf">
+	    </action>
+	    
+	     <!-- html -->
+	    <action name="a" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/a.html</result>
+	    </action>
+	    <action name="f" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/f.html</result>
+	    </action>
+	    <action name="g" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/g.html</result>
+	    </action>
+	    <action name="h" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/h.html</result>
+	    </action>
+	    <action name="i" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/i.html</result>
+	    </action>
+	    <action name="j" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/j.html</result>
+	    </action>
+	    <action name="k" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/k.html</result>
+	    </action>
+	    <action name="l" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/l.html</result>
+	    </action>
+	    <action name="m" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/m.html</result>
+	    </action>
+	    <action name="n" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/n.html</result>
+	    </action>
+	     <action name="o" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/o.html</result>
+	    </action>
+	    <action name="s" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/s.html</result>
+	    </action>
+	    <action name="t" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/t.html</result>
+	    </action>
+	    <action name="u" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/u.html</result>
+	    </action>
+	    <action name="v" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/v.html</result>
+	    </action>
+	    <action name="w" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/WEB-INF/PAGE/notice/w.html</result>
+	    </action>
+	    <!-- 编辑器html -->
+	    <action name="fckeditor" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/fckeditor.html</result>
+	    </action>
+	     <action name="fckdialog" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/fckdialog.html</result>
+	    </action>
+	     <action name="fck_specialchar" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_specialchar.html</result>
+	    </action>
+	     <action name="fck_link" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_link.html</result>
+	    </action>
+	     <action name="fck_image" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_image.html</result>
+	    </action>
+	    <action name="fck_image_preview" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_image/fck_image_preview.html</result>
+	    </action>
+	    <action name="fck_flash" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_flash.html</result>
+	    </action>
+	     <action name="fck_flash_preview" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_flash/fck_flash_preview.html</result>
+	    </action>
+	     <action name="fck_table" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_table.html</result>
+	    </action>
+	    <action name="fck_smiley" class="com.qdgs.controllergqy.GoToTestAction">
+	       <result name="success">/fckeditor/editor/dialog/fck_smiley.html</result>
+	    </action>
+	   
+	      <!-- 使用拦截器的页面跳转 admin-->
+	     <action name="manage" class="com.qdgs.controllergqy.ManageAction">
+	         <result name="success">/WEB-INF/PAGE/Manage.jsp</result>
+	           <!-- 使用拦截器 -->
+              <interceptor-ref name="defaultStack"/>
+              <interceptor-ref name="admin"/>
+	    </action>
+	    <action name="admin_user_add" class="com.qdgs.controllergqy.admin.UserInfoAction" method="add">
+	       <result name="success">/WEB-INF/PAGE/User/add.jsp</result>
+	       <interceptor-ref name="defaultStack"/>
+           <interceptor-ref name="admin"/>
+	    </action>
+	    
+	    
+	      <action name="admin_user_edit" class="com.qdgs.controllergqy.admin.UserInfoAction" method="edit">
+	       <result name="success">/WEB-INF/PAGE/User/edit.jsp</result>
+	       <interceptor-ref name="defaultStack"/>
+           <interceptor-ref name="admin"/>
+	    </action>
+	    <action name="admin_doc_change"  class="com.qdgs.controllergqy.admin.DocAction" method="change">
+	        <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	     </action>
+	     <action name="admin_doc_index" class="com.qdgs.controllergqy.admin.DocAction" method="show">
+	       <result name="success">/WEB-INF/PAGE/Doc/index.jsp</result>
+	       <interceptor-ref name="defaultStack"/>
+           <interceptor-ref name="admin"/>
+	    </action>
+	     <action name="admin_user_index" class="com.qdgs.controllergqy.admin.UserInfoAction" method="show">
+	       <result name="success">/WEB-INF/PAGE/User/index.jsp</result>
+	       <interceptor-ref name="defaultStack"/>
+           <interceptor-ref name="admin"/>
+	    </action>
+	    <!-- admin处理 -->
+	     <action name="adminloginoutaction" class="com.qdgs.controllergqy.admin.LoginoutAction">
+	        <result name="success" type="redirect">manage.html</result>
+	        <result name="error">/WEB-INF/PAGE/Exception/ErrorTest.jsp</result>
+	    </action>
+	    <action name="admin_user_add_action" class="com.qdgs.controllergqy.admin.UserInfoAction" method="addaction">
+	        <result name="success">/WEB-INF/PAGE/ToAdminUserIndex.jsp</result>
+	        <result name="error">/WEB-INF/PAGE/Exception/ErrorTest.jsp</result>
+	    </action>
+	    <!-- 上传 -->
+	    <action name="uploadaction" class="com.qdgs.controllergqy.UploadAction" method="uploadFile" >
+
+	    </action>
+	    <!-- 服务处理action -->
+	    <action name="service-apply" class="com.qdgs.controllergqy.DoubleServiceRequestAction" method="apply">
+	         <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	    </action>
+	     <action name="service-applyb" class="com.qdgs.controllergqy.ServiceRequestAction" method="apply">
+	         <result name="success" type="stream">
+	             <param name="contentType">text/html</param>
+	             <param name="inputName">result</param>
+	         </result>
+	    </action>
+	</package>
+	
+	
+</struts>

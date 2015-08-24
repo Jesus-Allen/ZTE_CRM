@@ -1,0 +1,105 @@
+        .ldown 
+        {  
+            position: absolute;  
+            top:0;left:0;right:0;bottom:0;
+			height:320px;
+			font-size:12px;
+        }  
+		.lup1a  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2a  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		.lup1b  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2b  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		.lup1c  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2c  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		.lup1d  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2d  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		.lup1e  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2e  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		.lup1f  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2f  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		.lup1g  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2g  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		.lup1h  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }  
+		.lup2h  
+        {  
+            position: relative;  
+            z-index:12;overflow:hidden;
+			left:0px;
+        }
+		#more a{ text-align:center; font-size:15px; font-family:"ºÚÌå"; text-decoration:none; color:black; }
+		.ldown table tr td a{ text-decoration:none; color:black; }

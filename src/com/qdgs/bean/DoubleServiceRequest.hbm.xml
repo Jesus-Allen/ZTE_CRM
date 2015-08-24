@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Hibernate映射文件的DTD信息 -->
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Hibernate映射文件的根元素 -->
+<hibernate-mapping package="com.qdgs.bean">
+	<class	name="DoubleServiceRequest"	table="DoubleServiceRequest">
+		<!-- 使用只读缓存 -->
+		<cache usage="read-write"/>
+		<!-- 映射标识属性 -->
+		<id	name="id" type="integer" column="id">
+			<!-- 指定使用identity主键生成策略 -->
+			<generator class="identity"/>
+		</id>
+		<!-- 映射普通属性 -->
+		<property name="kind" column="kind"
+			type="string" not-null="false" unique="false" length="50"/>
+		<property name="solve" column="solve"
+			type="string" not-null="true" unique="false" length="50"/>
+		<property name="uid" column="uid"
+			type="integer" not-null="true" unique="false" length="100"/>
+	</class>
+</hibernate-mapping>
